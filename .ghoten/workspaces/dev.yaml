@@ -1,0 +1,8 @@
+name: dev
+description: Development workspace for Ghoten UI demo
+environment: development
+backend:
+  type: oras
+  state_path: ghcr.io/vmvarela/tf-state.ghoten-ui-sample:dev
+variables:
+  example: value

@@ -1,0 +1,8 @@
+name: Ghoten UI Sample
+description: Demo project for Ghoten UI detection
+workspaces:
+  - dev
+backend:
+  type: oras
+  state_path: ghcr.io/vmvarela/tf-state.ghoten-ui-sample:dev
+variables: {}
