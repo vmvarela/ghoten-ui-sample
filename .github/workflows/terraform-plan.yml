@@ -8,6 +8,8 @@ on:
         required: true
         default: 'dev'
 
+env:
+  TF_WORKSPACE: ${{ github.event.inputs.workspace }}
 jobs:
   plan:
     runs-on: ubuntu-latest

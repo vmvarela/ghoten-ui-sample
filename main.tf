@@ -9,7 +9,7 @@ terraform {
   }
 
   backend "oras" {
-    repository = "ghcr.io/vmvarela/tf-state.ghoten-ui-sample:dev"
+    repository = "ghcr.io/vmvarela/tf-state.ghoten-ui-sample"
   }
 }
 
