@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Setup Ghoten
-        uses: vmvarela/ghoten/actions/setup@v1.11.2
+        uses: vmvarela/ghoten/actions/setup@master
       
       - name: Ghoten Init
         run: ghoten init
