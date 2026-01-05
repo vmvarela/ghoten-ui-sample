@@ -1,0 +1,27 @@
+name: Terraform Apply
+
+on:
+  workflow_dispatch:
+    inputs:
+      workspace:
+        description: 'Workspace name'
+        required: true
+        default: 'dev'
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+      
+      - name: Terraform Init
+        run: terraform init
+      
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
+        env:
+          TF_VAR_github_token: ${{ secrets.GITHUB_TOKEN }}
+          TF_VAR_github_owner: ${{ github.repository_owner }}
