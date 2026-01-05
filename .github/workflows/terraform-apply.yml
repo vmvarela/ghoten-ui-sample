@@ -8,9 +8,6 @@ on:
         required: true
         default: 'dev'
 
-env:
-  TF_WORKSPACE: ${{ github.event.inputs.workspace }}
-
 jobs:
   apply:
     runs-on: ubuntu-latest
@@ -22,7 +19,9 @@ jobs:
       
       - name: Ghoten Init
         run: ghoten init
-      
+
+      - name: Select Workspace
+        run: ghoten workspace select ${{ inputs.workspace }} || ghoten workspace new ${{ inputs.workspace }}
       - name: Ghoten Apply
         run: ghoten apply -auto-approve
         env:
